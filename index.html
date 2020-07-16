@@ -136,14 +136,15 @@
 
       var input = $(this).closest("tr").find(".time-block");
       var text = $(input).val();
+      var keyId = $(input).attr('id')
       // var id = $(input).attr("id");
 
-      localStorage.setItem("schedule item", text)
+      localStorage.setItem(keyId, JSON.stringify(text))
     });
   
     // recall item from local storage 
-    $("#9").text(localStorage.getItem("#9"));
-    $("#10").val(localStorage.getItem("#10"));
+    var test = $("#9").val(localStorage.getItem("#9"));
+    $("#10 .time-block").val(localStorage.getItem("#10"));
     $("#11").val(localStorage.getItem("#11"));
     $("#12").val(localStorage.getItem("#12"));
     $("#13").val(localStorage.getItem("#13"));
@@ -151,7 +152,7 @@
     $("#15").val(localStorage.getItem("#15"));
     $("#16").val(localStorage.getItem("#16"));
     $("#17").val(localStorage.getItem("#17"));
- 
+    console.log(test)
 
     function setColor(element, color) {
       element.style.backgroundColor = color;
